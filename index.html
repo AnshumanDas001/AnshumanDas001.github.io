@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Anshuman Das | AI &amp; Backend Engineer</title>
+  <meta name="description" content="Anshuman Das builds production LLM systems: RAG platforms, model serving, safety guardrails and cost-aware LLM routing with Python, FastAPI, PostgreSQL and Docker." />
+  <meta name="theme-color" content="#0a0a0c" />
+  <meta property="og:title" content="Anshuman Das | AI &amp; Backend Engineer" />
+  <meta property="og:description" content="Production RAG, LLM serving, guardrails and cost-aware LLM routing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://anshumandas001.github.io/" />
+  <meta property="og:image" content="https://anshumandas001.github.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://anshumandas001.github.io/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='4 2 16 16'%3E%3Cpath fill='%23ffca83' d='M12 2c.7 5.6 2.4 7.3 8 8-5.6.7-7.3 2.4-8 8-.7-5.6-2.4-7.3-8-8 5.6-.7 7.3-2.4 8-8Z'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <!-- Backdrop: gradient, drifting nebula and a twinkling star canvas -->
+  <div class="backdrop" aria-hidden="true">
+    <div class="nebula"></div>
+    <canvas id="sky"></canvas>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#home"><span class="accent">Anshuman</span> Das</a>
+
+      <div class="desktop-nav">
+        <a class="nav-link" href="#experience" data-section="experience">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="13.5" rx="2"/><path d="M8.5 7V5.2c0-.9.7-1.7 1.7-1.7h3.6c.9 0 1.7.7 1.7 1.7V7"/><path d="M2.5 12.5h19"/><path d="M11 12.5v1.6h2v-1.6"/></svg>
+          <span class="spark" aria-hidden="true"><svg viewBox="4 2 16 16"><path d="M12 2c.7 5.6 2.4 7.3 8 8-5.6.7-7.3 2.4-8 8-.7-5.6-2.4-7.3-8-8 5.6-.7 7.3-2.4 8-8Z"/></svg></span>
+          <span class="roll"><span class="roll-inner"><span>I Work</span><span class="accent">Experience</span></span></span>
+        </a>
+        <a class="nav-link" href="#projects" data-section="projects">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 9 4.6-9 4.6-9-4.6z"/><path d="m3 12 9 4.6 9-4.6"/><path d="m3 16.6 9 4.6 9-4.6"/></svg>
+          <span class="spark" aria-hidden="true"><svg viewBox="4 2 16 16"><path d="M12 2c.7 5.6 2.4 7.3 8 8-5.6.7-7.3 2.4-8 8-.7-5.6-2.4-7.3-8-8 5.6-.7 7.3-2.4 8-8Z"/></svg></span>
+          <span class="roll"><span class="roll-inner"><span>I Build</span><span class="accent">Projects</span></span></span>
+        </a>
+        <a class="nav-link" href="#about" data-section="about">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="m15.8 8.2-2.1 5.5-5.5 2.1 2.1-5.5z"/></svg>
+          <span class="spark" aria-hidden="true"><svg viewBox="4 2 16 16"><path d="M12 2c.7 5.6 2.4 7.3 8 8-5.6.7-7.3 2.4-8 8-.7-5.6-2.4-7.3-8-8 5.6-.7 7.3-2.4 8-8Z"/></svg></span>
+          <span class="roll"><span class="roll-inner"><span>I Explore</span><span class="accent">About</span></span></span>
+        </a>
+        <a class="nav-link" href="#contact" data-section="contact">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 2.5 14.8 21l-3.6-8.2L3 9.2z"/><path d="M21.5 2.5 11.2 12.8"/></svg>
+          <span class="spark" aria-hidden="true"><svg viewBox="4 2 16 16"><path d="M12 2c.7 5.6 2.4 7.3 8 8-5.6.7-7.3 2.4-8 8-.7-5.6-2.4-7.3-8-8 5.6-.7 7.3-2.4 8-8Z"/></svg></span>
+          <span class="roll"><span class="roll-inner"><span>Say Hi</span><span class="accent">Contact</span></span></span>
+        </a>
+      </div>
+
+      <div class="nav-actions">
+        <button type="button" class="console-btn" id="open-console" aria-label="Open the command console">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 17 6-6-6-6"/><path d="M12 19h8"/></svg>
+          <span class="kbd">⌘K</span>
+        </button>
+        <a class="resume-btn" href="resume.pdf" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+          Resume
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="content" tabindex="-1">
+
+    <!-- ============ HOME ============ -->
+    <section id="home" class="hero" data-spy>
+      <div class="hero-copy">
+        <h1 class="sr-only">Hey, I am Anshuman, an AI engineer, backend engineer, LLM systems builder and problem solver</h1>
+        <span class="hero-hello reveal" aria-hidden="true">Hey, I am Anshuman, an</span>
+        <div class="slider reveal" aria-hidden="true">
+          <div class="slider-track">
+            <span>AI Engineer</span>
+            <span>Backend Engineer</span>
+            <span>LLM Systems Builder</span>
+            <span>Problem Solver</span>
+            <span>AI Engineer</span>
+          </div>
+        </div>
+        <p class="hero-tag reveal">I turn prompts into production.</p>
+        <p class="hero-summary reveal">
+          I build production LLM systems: retrieval-augmented generation, model serving,
+          safety guardrails and cost-aware routing, with Python, FastAPI, PostgreSQL and Docker.
+          Right now I'm running a RAG platform for 200 network engineers at ACT Fibernet in Bengaluru.
+        </p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" href="#projects">See what I build
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <div class="socials">
+            <a href="https://github.com/AnshumanDas001" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/anshuman-das-875a9a282" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" class="fill" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+            </a>
+            <a href="mailto:dasanshuneel001@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated route trace, a nod to ThriftLLM -->
+      <div class="terminal reveal" aria-hidden="true">
+        <div class="terminal-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="terminal-title">thriftllm — route trace</span>
+        </div>
+        <pre class="terminal-body" id="trace"></pre>
+      </div>
+    </section>
+
+    <div class="stats reveal" aria-label="Highlights">
+      <div class="stat"><span class="stat-num" data-count="200">200</span><span class="stat-label">NOC engineers on my RAG platform</span></div>
+      <div class="stat"><span class="stat-num" data-count="40" data-suffix="%">40%</span><span class="stat-label">less GPU VRAM after serving tuning</span></div>
+      <div class="stat"><span class="stat-num" data-count="82" data-suffix="%">82%</span><span class="stat-label">inference cost cut by ThriftLLM</span></div>
+      <div class="stat"><span class="stat-num" data-count="1898">1898</span><span class="stat-label">LeetCode rating, Knight (top 4.42%)</span></div>
+    </div>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="work-grid">
+      <aside class="toolkit">
+        <h2 class="section-title reveal">Toolkit</h2>
+        <p class="hint reveal">Hover a skill to see where I used it, or hover a role or project to see its stack.</p>
+
+        <div class="tool-group reveal">
+          <h3>&gt; Languages</h3>
+          <div class="pills">
+            <span class="pill" data-skill="python">Python</span>
+            <span class="pill" data-skill="cpp">C++</span>
+            <span class="pill" data-skill="c">C</span>
+            <span class="pill" data-skill="js">JavaScript</span>
+            <span class="pill" data-skill="sql">SQL</span>
+          </div>
+        </div>
+        <div class="tool-group reveal">
+          <h3>&gt; AI &amp; LLM</h3>
+          <div class="pills">
+            <span class="pill" data-skill="rag">RAG</span>
+            <span class="pill" data-skill="serving">vLLM</span>
+            <span class="pill" data-skill="serving">llama.cpp</span>
+            <span class="pill" data-skill="routing">LLM Routing</span>
+            <span class="pill" data-skill="eval">LLM Evaluation</span>
+            <span class="pill" data-skill="guardrails">Guardrails</span>
+            <span class="pill" data-skill="finetune">Fine-Tuning</span>
+            <span class="pill" data-skill="vectordb">Vector DBs</span>
+            <span class="pill" data-skill="ml">scikit-learn</span>
+          </div>
+        </div>
+        <div class="tool-group reveal">
+          <h3>&gt; Backend</h3>
+          <div class="pills">
+            <span class="pill" data-skill="fastapi">FastAPI</span>
+            <span class="pill" data-skill="flask">Flask</span>
+            <span class="pill" data-skill="rest">REST APIs</span>
+            <span class="pill" data-skill="micro">Microservices</span>
+            <span class="pill" data-skill="postgres">PostgreSQL</span>
+            <span class="pill" data-skill="redis">Redis</span>
+            <span class="pill" data-skill="sqlite">SQLite / libSQL</span>
+          </div>
+        </div>
+        <div class="tool-group reveal">
+          <h3>&gt; Cloud &amp; DevOps</h3>
+          <div class="pills">
+            <span class="pill" data-skill="docker">Docker</span>
+            <span class="pill" data-skill="jenkins">Jenkins</span>
+            <span class="pill" data-skill="cicd">CI/CD</span>
+            <span class="pill" data-skill="cloudrun">Cloud Run</span>
+            <span class="pill" data-skill="linux">Linux</span>
+            <span class="pill" data-skill="shell">Shell Scripting</span>
+          </div>
+        </div>
+        <div class="tool-group reveal">
+          <h3>&gt; Networking</h3>
+          <div class="pills">
+            <span class="pill" data-skill="net">TCP/IP</span>
+            <span class="pill" data-skill="net">OSPF &amp; RIP</span>
+            <span class="pill" data-skill="net">Packet Analysis</span>
+            <span class="pill" data-skill="ws">WebSockets</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="work-main">
+        <div id="experience" class="work-block" data-spy>
+        <div class="exp-head reveal">
+          <h2 class="section-title">Experience</h2>
+          <button type="button" class="status-pill copy-email" data-email="dasanshuneel001@gmail.com">
+            <span class="status-dot" aria-hidden="true"><span></span></span>
+            <span class="status-text">
+              <span class="ghost" aria-hidden="true">Copy dasanshuneel001@gmail.com</span>
+              <span class="label" data-default="Open to new opportunities" data-hover="Copy dasanshuneel001@gmail.com">Open to new opportunities</span>
+            </span>
+          </button>
+        </div>
+
+        <ol class="timeline">
+          <li class="role reveal open" data-skills="python postgres serving rag guardrails finetune micro vectordb docker fastapi rest linux net eval">
+            <button type="button" class="role-head" aria-expanded="true">
+              <span class="role-title">
+                <h3>Management Trainee, Technology</h3>
+                <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+              <span class="role-meta">
+                <span class="company">ACT Fibernet · Bengaluru</span>
+                <span class="dates">January 2026 – Present</span>
+              </span>
+            </button>
+            <div class="role-body">
+              <div class="role-inner">
+                <ul>
+                  <li>Architected a <strong>production RAG platform from scratch</strong> for Network Operations Center workflows, serving <strong>200 engineers</strong>: MinerU Pro document parsing, Gemma 4 vision image descriptions, Qwen3-4B embeddings and Qwen3.6-35B generation.</li>
+                  <li>Optimized inference with <strong>vLLM and llama.cpp</strong>, cutting GPU VRAM usage by <strong>40%</strong> and scaling concurrent users <strong>10×</strong> (2 to 20).</li>
+                  <li>Built a <strong>two-layer guardrails service</strong>: Llama Guard for safety filtering and a fine-tuned DistilBERT classifier that rejects off-domain queries.</li>
+                  <li>Designed separate <strong>authentication and admin microservices</strong> for user and document management, enforcing RBAC at the service level and per vector-database collection.</li>
+                </ul>
+                <div class="tags"><span>Python</span><span>PostgreSQL</span><span>vLLM</span><span>llama.cpp</span><span>MinerU</span><span>Qwen3</span><span>Gemma</span><span>Llama Guard</span><span>DistilBERT</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li class="role reveal" data-skills="python jenkins cicd shell linux">
+            <button type="button" class="role-head" aria-expanded="false">
+              <span class="role-title">
+                <h3>Summer Intern</h3>
+                <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+              <span class="role-meta">
+                <span class="company">Texas Instruments</span>
+                <span class="dates">May 2025 – July 2025</span>
+              </span>
+            </button>
+            <div class="role-body">
+              <div class="role-inner">
+                <ul>
+                  <li>Built a <strong>Python/Jenkins CI pipeline</strong> that automates LabVIEW/TestStand hardware validation.</li>
+                  <li>Optimized test suites with Python unit tests and shell scripts, cutting test turnaround time by <strong>66%</strong> (3× faster feedback).</li>
+                </ul>
+                <div class="tags"><span>Python</span><span>Jenkins</span><span>Shell Scripting</span><span>LabVIEW</span><span>NI TestStand</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li class="role reveal" data-skills="python cpp c js sql ml net">
+            <button type="button" class="role-head" aria-expanded="false">
+              <span class="role-title">
+                <h3>B.Tech, Electronics &amp; Instrumentation</h3>
+                <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+              <span class="role-meta">
+                <span class="company">NIT Agartala</span>
+                <span class="dates">November 2022 – May 2026</span>
+              </span>
+            </button>
+            <div class="role-body">
+              <div class="role-inner">
+                <ul>
+                  <li>Graduated with a <strong>CGPA of 8.04/10</strong> from the National Institute of Technology, Agartala.</li>
+                  <li>Grounded in data structures and algorithms, operating systems, DBMS, OOP and design patterns, plus signals, systems and instrumentation.</li>
+                  <li>Built side projects along the way: a face-detection attendance tracker, a DSA visualiser and a signals &amp; systems playground.</li>
+                </ul>
+                <div class="tags"><span>DSA</span><span>Operating Systems</span><span>DBMS</span><span>OOP</span><span>Design Patterns</span></div>
+              </div>
+            </div>
+          </li>
+        </ol>
+        </div>
+
+        <!-- ============ PROJECTS ============ -->
+        <div id="projects" class="work-block projects" data-spy>
+      <div class="section-head reveal">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-sub">Things I designed, built, measured and shipped.</p>
+      </div>
+
+      <article class="project featured reveal" data-skills="python fastapi rest routing eval ml sqlite cloudrun">
+        <div class="project-top">
+          <div>
+            <span class="eyebrow">LLM gateway · deployed on Cloud Run</span>
+            <h3>ThriftLLM</h3>
+            <p class="project-lede">A cost-optimized LLM router with verified escalation. It answers with the cheapest model that can be trusted, and checks that before paying for a bigger one.</p>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-primary btn-sm" href="https://thriftllm-582468287136.asia-south1.run.app/" target="_blank" rel="noopener noreferrer">Live demo
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-sm" href="https://github.com/AnshumanDas001/llm-router" target="_blank" rel="noopener noreferrer">GitHub
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <div><span class="m-num">82%</span><span class="m-label">cheaper than a frontier model</span></div>
+          <div><span class="m-num">41%</span><span class="m-label">cheaper than a mid-tier model</span></div>
+          <div><span class="m-num">~7 ms</span><span class="m-label">prompt difficulty classification</span></div>
+          <div><span class="m-num">94%</span><span class="m-label">of bad cheap answers caught</span></div>
+        </div>
+
+        <ul class="project-points">
+          <li>OpenAI-compatible gateway with multi-user auth, cost tracking and encrypted key storage. On a 116-query, three-difficulty benchmark, all 76 objectively graded answers were correct.</li>
+          <li>Routing policy minimizes expected cost (generation + verification + escalation) under a 0.80 per-difficulty accuracy floor. The routing map is derived automatically by calibrating any user-supplied model.</li>
+          <li>Similarity-weighted k-NN vote over sentence embeddings classifies difficulty with no LLM call, raising accuracy from 56.0% to 64.7%.</li>
+          <li>Two-stage verification: a logistic-regression confidence gate over token logprobs, then a $0.00004 LLM judge before escalation.</li>
+        </ul>
+        <div class="tags"><span>Python</span><span>FastAPI</span><span>LiteLLM</span><span>Sentence-Transformers</span><span>scikit-learn</span><span>Turso (libSQL)</span><span>Google Cloud Run</span></div>
+      </article>
+
+      <article class="project reveal" data-skills="python js ml">
+        <div class="project-top">
+          <div>
+            <span class="eyebrow">Forecasting · zero-backend dashboard</span>
+            <h3>Event Plan Optima</h3>
+            <p class="project-lede">Event-driven traffic congestion forecasting for Bengaluru Traffic Police, built from 8,173 real event records.</p>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-ghost btn-sm" href="https://github.com/AnshumanDas001/EventPlanOptima" target="_blank" rel="noopener noreferrer">GitHub
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </div>
+        <ul class="project-points">
+          <li>Recommends manpower, barricading and diversion plans for planned and unplanned events.</li>
+          <li>Logistic-regression road-closure model at <strong>0.77 CV AUC</strong>, on par with Random Forest, trained after rejecting a leaky target.</li>
+          <li>Ported the model to JavaScript for interpretable, in-browser inference with no backend.</li>
+        </ul>
+        <div class="tags"><span>Python</span><span>pandas</span><span>scikit-learn</span><span>JavaScript</span><span>Leaflet</span><span>Chart.js</span><span>Netlify</span></div>
+      </article>
+
+      <div class="more reveal">
+        <h3 class="more-title">&gt; More on GitHub</h3>
+        <ul class="more-list">
+          <li data-skills="python"><a href="https://github.com/AnshumanDas001/Face-Detection-based-Attendance-Tracker" target="_blank" rel="noopener noreferrer"><span>Face-Detection Attendance Tracker</span><em>Python</em></a></li>
+          <li data-skills="python"><a href="https://github.com/AnshumanDas001/Data-Structures-and-algortihm-visualiser" target="_blank" rel="noopener noreferrer"><span>DSA Visualiser</span><em>Python</em></a></li>
+          <li data-skills="python"><a href="https://github.com/AnshumanDas001/Signal-System-Playground" target="_blank" rel="noopener noreferrer"><span>Signal &amp; System Playground</span><em>Python</em></a></li>
+          <li data-skills="js"><a href="https://github.com/AnshumanDas001/TALENTFLOW" target="_blank" rel="noopener noreferrer"><span>TalentFlow</span><em>JavaScript</em></a></li>
+          <li data-skills="js"><a href="https://github.com/AnshumanDas001/Imagify" target="_blank" rel="noopener noreferrer"><span>Imagify</span><em>JavaScript</em></a></li>
+          <li data-skills="js"><a href="https://github.com/AnshumanDas001/Pustak-Sangh" target="_blank" rel="noopener noreferrer"><span>Pustak Sangh</span><em>JavaScript</em></a></li>
+        </ul>
+      </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="about" data-spy>
+      <div class="section-head reveal">
+        <h2 class="section-title">About</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I studied Electronics and Instrumentation at NIT Agartala, which is a roundabout way to end up in LLM infrastructure. It taught me to treat systems as signals: measure first, then tune.</p>
+          <p>That habit shows up everywhere in my work. A RAG platform is only as good as its parsing, retrieval and guardrails, so I instrument each layer. A router is only worth running if it saves money without losing accuracy, so ThriftLLM ships with a benchmark, not just a claim.</p>
+          <p>Before AI, I spent a lot of time on algorithms: 600+ problems solved across LeetCode and GeeksforGeeks. I also know networking well (TCP/IP, OSPF, RIP and packet analysis), which helps when the users of my RAG platform are network engineers.</p>
+        </div>
+        <div class="about-cards">
+          <div class="card reveal">
+            <span class="card-kicker">&gt; Achievements</span>
+            <ul class="card-list">
+              <li><strong>LeetCode Knight</strong>, rating 1898, top 4.42% globally</li>
+              <li><strong>Top 5%</strong> of 30,000+ applicants in Flipkart GRiD 8</li>
+              <li><strong>600+</strong> problems solved on LeetCode and GeeksforGeeks</li>
+              <li><strong>Special Mention</strong> at Model United Nations</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <span class="card-kicker">&gt; Education</span>
+            <p class="card-title">B.Tech, Electronics &amp; Instrumentation Engineering</p>
+            <p class="card-meta">National Institute of Technology, Agartala</p>
+            <p class="card-meta mono">2022 – 2026 · CGPA 8.04/10</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="contact" data-spy>
+      <div class="contact-card reveal">
+        <span class="card-kicker">&gt; Say Hi</span>
+        <h2 class="contact-title">Building something with LLMs?<br /><span class="accent">Let's talk.</span></h2>
+        <p class="contact-sub">I'm open to AI and backend engineering roles, and happy to chat about RAG, model serving or routing.</p>
+        <div class="contact-actions">
+          <button type="button" class="btn btn-primary copy-email" data-email="dasanshuneel001@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
+            <span class="label" data-default="dasanshuneel001@gmail.com">dasanshuneel001@gmail.com</span>
+          </button>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/anshuman-das-875a9a282" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/AnshumanDas001" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <ul>
+        <li><a href="#experience">I Work</a></li>
+        <li><a href="#projects">I Build</a></li>
+        <li><a href="#about">I Explore</a></li>
+        <li><a href="#contact">Say Hi</a></li>
+      </ul>
+      <p>© <span id="year">2026</span> Anshuman Das · Bengaluru, India</p>
+    </footer>
+  </div>
+
+  <!-- Mobile bottom nav -->
+  <nav class="mobile-nav" aria-label="Mobile">
+    <a href="#home" data-section="home" aria-label="Home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v11.5h14V9"/></svg>Home</a>
+    <a href="#experience" data-section="experience" aria-label="I Work, Experience">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="13.5" rx="2"/><path d="M8.5 7V5.2c0-.9.7-1.7 1.7-1.7h3.6c.9 0 1.7.7 1.7 1.7V7"/><path d="M2.5 12.5h19"/></svg>I Work</a>
+    <a href="#projects" data-section="projects" aria-label="I Build, Projects">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 9 4.6-9 4.6-9-4.6z"/><path d="m3 12 9 4.6 9-4.6"/><path d="m3 16.6 9 4.6 9-4.6"/></svg>I Build</a>
+    <a href="#about" data-section="about" aria-label="I Explore, About">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="m15.8 8.2-2.1 5.5-5.5 2.1 2.1-5.5z"/></svg>I Explore</a>
+    <a href="#contact" data-section="contact" aria-label="Say Hi, Contact">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 2.5 14.8 21l-3.6-8.2L3 9.2z"/><path d="M21.5 2.5 11.2 12.8"/></svg>Say Hi</a>
+  </nav>
+
+  <!-- ⌘K console -->
+  <div class="console" id="console" hidden>
+    <div class="console-backdrop" data-close></div>
+    <div class="console-panel" role="dialog" aria-modal="true" aria-label="Command console">
+      <div class="console-input-row">
+        <span class="prompt" aria-hidden="true">&gt;</span>
+        <input id="console-input" type="text" placeholder="Type a command or search…" autocomplete="off" spellcheck="false" aria-controls="console-list" />
+        <kbd>esc</kbd>
+      </div>
+      <ul id="console-list" class="console-list" role="listbox"></ul>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
