@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Anshuman Das | AI &amp; Backend Engineer</title>
   <meta name="description" content="Anshuman Das builds production LLM systems: RAG platforms, model serving, safety guardrails and cost-aware LLM routing with Python, FastAPI, PostgreSQL and Docker." />
-  <meta name="theme-color" content="#0a0a0c" />
+  <meta name="theme-color" content="#09090b" />
   <meta property="og:title" content="Anshuman Das | AI &amp; Backend Engineer" />
   <meta property="og:description" content="Production RAG, LLM serving, guardrails and cost-aware LLM routing." />
   <meta property="og:type" content="website" />
@@ -18,18 +18,22 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='4 2 16 16'%3E%3Cpath fill='%23ffca83' d='M12 2c.7 5.6 2.4 7.3 8 8-5.6.7-7.3 2.4-8 8-.7-5.6-2.4-7.3-8-8 5.6-.7 7.3-2.4 8-8Z'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <a href="#content" class="skip-link">Skip to content</a>
 
-  <!-- Backdrop: gradient, drifting nebula and a twinkling star canvas -->
+  <!-- Backdrop: aurora, a fine grid that brightens under the cursor, light beams on the grid, film grain -->
   <div class="backdrop" aria-hidden="true">
-    <div class="nebula"></div>
-    <canvas id="sky"></canvas>
+    <div class="aurora"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+    <div class="grid"></div>
+    <div class="grid grid-lit"></div>
+    <canvas id="beams"></canvas>
+    <div class="grain"></div>
   </div>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
   <header class="site-header">
     <nav class="nav" aria-label="Main">
@@ -76,26 +80,36 @@
     <!-- ============ HOME ============ -->
     <section id="home" class="hero" data-spy>
       <div class="hero-copy">
-        <h1 class="sr-only">Hey, I am Anshuman, an AI engineer, backend engineer, LLM systems builder and problem solver</h1>
-        <span class="hero-hello reveal" aria-hidden="true">Hey, I am Anshuman, an</span>
-        <div class="slider reveal" aria-hidden="true">
-          <div class="slider-track">
-            <span>AI Engineer</span>
-            <span>Backend Engineer</span>
-            <span>LLM Systems Builder</span>
-            <span>Problem Solver</span>
-            <span>AI Engineer</span>
-          </div>
+        <a class="badge reveal" href="#contact">
+          <span class="pulse" aria-hidden="true"></span>
+          Open to AI &amp; backend roles
+          <span class="badge-sep" aria-hidden="true"></span>
+          <span class="mono">Bengaluru, IN</span>
+        </a>
+        <h1 class="sr-only">Anshuman Das, AI and backend engineer. I ship RAG platforms, LLM routers, guardrails and model servers to production.</h1>
+        <p class="hero-hello reveal" aria-hidden="true">Hey, I'm Anshuman <span class="wave">👋</span></p>
+        <div class="display reveal" aria-hidden="true">
+          <span class="display-line">I ship</span>
+          <span class="slider"><span class="slider-track">
+            <span>RAG platforms</span>
+            <span>LLM routers</span>
+            <span>guardrails</span>
+            <span>model servers</span>
+            <span>RAG platforms</span>
+          </span></span>
+          <span class="display-line">to production.</span>
         </div>
-        <p class="hero-tag reveal">I turn prompts into production.</p>
         <p class="hero-summary reveal">
-          I build production LLM systems: retrieval-augmented generation, model serving,
-          safety guardrails and cost-aware routing, with Python, FastAPI, PostgreSQL and Docker.
-          Right now I'm running a RAG platform for 200 network engineers at ACT Fibernet in Bengaluru.
+          AI &amp; backend engineer working on retrieval-augmented generation, model serving,
+          safety guardrails and cost-aware routing. Right now I run a RAG platform for
+          <strong>200 network engineers</strong> at ACT Fibernet.
         </p>
         <div class="hero-cta reveal">
           <a class="btn btn-primary" href="#projects">See what I build
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
           </a>
           <div class="socials">
             <a href="https://github.com/AnshumanDas001" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -112,14 +126,24 @@
       </div>
 
       <!-- Animated route trace, a nod to ThriftLLM -->
-      <div class="terminal reveal" aria-hidden="true">
+      <figure class="hero-fig reveal" aria-hidden="true">
+      <div class="terminal tilt">
         <div class="terminal-bar">
           <span class="dot"></span><span class="dot"></span><span class="dot"></span>
           <span class="terminal-title">thriftllm — route trace</span>
         </div>
         <pre class="terminal-body" id="trace"></pre>
       </div>
+      <figcaption class="fig-cap"><span>Fig. 01</span> ThriftLLM picks the cheapest model it can trust, then verifies</figcaption>
+      </figure>
     </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Python</span><span>FastAPI</span><span>vLLM</span><span>llama.cpp</span><span>PostgreSQL</span><span>Docker</span><span>Qwen3</span><span>Gemma</span><span>Llama Guard</span><span>DistilBERT</span><span>LiteLLM</span><span>scikit-learn</span><span>Sentence-Transformers</span><span>Cloud Run</span><span>Redis</span><span>Jenkins</span>
+        <span>Python</span><span>FastAPI</span><span>vLLM</span><span>llama.cpp</span><span>PostgreSQL</span><span>Docker</span><span>Qwen3</span><span>Gemma</span><span>Llama Guard</span><span>DistilBERT</span><span>LiteLLM</span><span>scikit-learn</span><span>Sentence-Transformers</span><span>Cloud Run</span><span>Redis</span><span>Jenkins</span>
+      </div>
+    </div>
 
     <div class="stats reveal" aria-label="Highlights">
       <div class="stat"><span class="stat-num" data-count="200">200</span><span class="stat-label">NOC engineers on my RAG platform</span></div>
@@ -131,7 +155,8 @@
     <!-- ============ EXPERIENCE ============ -->
     <section class="work-grid">
       <aside class="toolkit">
-        <h2 class="section-title reveal">Toolkit</h2>
+        <div class="kicker reveal"><span>✦</span>Toolkit</div>
+        <h2 class="section-title reveal">The <em>toolkit</em></h2>
         <p class="hint reveal">Hover a skill to see where I used it, or hover a role or project to see its stack.</p>
 
         <div class="tool-group reveal">
@@ -194,8 +219,9 @@
 
       <div class="work-main">
         <div id="experience" class="work-block" data-spy>
+        <div class="kicker reveal"><span>01</span>Experience</div>
         <div class="exp-head reveal">
-          <h2 class="section-title">Experience</h2>
+          <h2 class="section-title">Where I've <em>worked</em></h2>
           <button type="button" class="status-pill copy-email" data-email="dasanshuneel001@gmail.com">
             <span class="status-dot" aria-hidden="true"><span></span></span>
             <span class="status-text">
@@ -280,8 +306,9 @@
         <!-- ============ PROJECTS ============ -->
         <div id="projects" class="work-block projects" data-spy>
       <div class="section-head reveal">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-sub">Things I designed, built, measured and shipped.</p>
+        <div class="kicker"><span>02</span>Projects</div>
+        <h2 class="section-title">Things I've <em>built</em></h2>
+        <p class="section-sub">Designed, measured and shipped, with the numbers to back them up.</p>
       </div>
 
       <article class="project featured reveal" data-skills="python fastapi rest routing eval ml sqlite cloudrun">
@@ -307,6 +334,27 @@
           <div><span class="m-num">~7 ms</span><span class="m-label">prompt difficulty classification</span></div>
           <div><span class="m-num">94%</span><span class="m-label">of bad cheap answers caught</span></div>
         </div>
+
+        <figure class="cost-chart" aria-labelledby="cost-cap">
+          <div class="bars" role="table" aria-label="Relative inference cost, frontier model = 100">
+            <div class="bar-row" role="row" data-tip="Frontier model: 100 (baseline)">
+              <span class="bar-label" role="rowheader">Frontier model</span>
+              <span class="bar-track"><span class="bar" style="--v:100"></span></span>
+              <span class="bar-val" role="cell">100</span>
+            </div>
+            <div class="bar-row" role="row" data-tip="Mid-tier model: ≈31 (ThriftLLM is 41% cheaper)">
+              <span class="bar-label" role="rowheader">Mid-tier model</span>
+              <span class="bar-track"><span class="bar" style="--v:30.5"></span></span>
+              <span class="bar-val" role="cell">≈31</span>
+            </div>
+            <div class="bar-row is-hero" role="row" data-tip="ThriftLLM: 18 (82% cheaper than frontier)">
+              <span class="bar-label" role="rowheader">ThriftLLM</span>
+              <span class="bar-track"><span class="bar" style="--v:18"></span></span>
+              <span class="bar-val" role="cell">18</span>
+            </div>
+          </div>
+          <figcaption id="cost-cap" class="fig-cap"><span>Fig. 02</span> Relative inference cost on the 116-query benchmark (frontier = 100)</figcaption>
+        </figure>
 
         <ul class="project-points">
           <li>OpenAI-compatible gateway with multi-user auth, cost tracking and encrypted key storage. On a 116-query, three-difficulty benchmark, all 76 objectively graded answers were correct.</li>
@@ -356,7 +404,8 @@
     <!-- ============ ABOUT ============ -->
     <section id="about" class="about" data-spy>
       <div class="section-head reveal">
-        <h2 class="section-title">About</h2>
+        <div class="kicker"><span>03</span>About</div>
+        <h2 class="section-title">A bit <em>about</em> me</h2>
       </div>
       <div class="about-grid">
         <div class="about-text reveal">
@@ -387,8 +436,8 @@
     <!-- ============ CONTACT ============ -->
     <section id="contact" class="contact" data-spy>
       <div class="contact-card reveal">
-        <span class="card-kicker">&gt; Say Hi</span>
-        <h2 class="contact-title">Building something with LLMs?<br /><span class="accent">Let's talk.</span></h2>
+        <div class="kicker kicker-center"><span>04</span>Contact</div>
+        <h2 class="contact-title">Building something with LLMs?<br /><em>Let's talk.</em></h2>
         <p class="contact-sub">I'm open to AI and backend engineering roles, and happy to chat about RAG, model serving or routing.</p>
         <div class="contact-actions">
           <button type="button" class="btn btn-primary copy-email" data-email="dasanshuneel001@gmail.com">
@@ -398,17 +447,21 @@
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/anshuman-das-875a9a282" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a class="btn btn-ghost" href="https://github.com/AnshumanDas001" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
+        <p class="local-time mono"><span class="pulse" aria-hidden="true"></span>Bengaluru · <span id="local-time">IST</span></p>
       </div>
     </section>
 
     <footer class="footer">
-      <ul>
-        <li><a href="#experience">I Work</a></li>
-        <li><a href="#projects">I Build</a></li>
-        <li><a href="#about">I Explore</a></li>
-        <li><a href="#contact">Say Hi</a></li>
-      </ul>
-      <p>© <span id="year">2026</span> Anshuman Das · Bengaluru, India</p>
+      <div class="footer-row">
+        <ul>
+          <li><a href="#experience">I Work</a></li>
+          <li><a href="#projects">I Build</a></li>
+          <li><a href="#about">I Explore</a></li>
+          <li><a href="#contact">Say Hi</a></li>
+        </ul>
+        <p>© <span id="year">2026</span> Anshuman Das · Built from scratch, no frameworks</p>
+      </div>
+      <div class="wordmark" aria-hidden="true">ANSHUMAN</div>
     </footer>
   </div>
 
